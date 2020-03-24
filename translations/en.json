@@ -1,0 +1,8 @@
+{
+  "app": {
+    "name": "Garden Vue Playground",
+    "short_description": "Vuefication of Zendesk Garden",
+    "long_description": "A navbar app showcasing a Vue-based implementation of the Zendesk Garden component library",
+    "parameters": {}
+  }
+}

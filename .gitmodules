@@ -1,0 +1,3 @@
+[submodule "assets/js/components/garden-vue"]
+	path = assets/js/components/garden-vue
+	url = https://github.com/alex-zendesk/garden-vue
