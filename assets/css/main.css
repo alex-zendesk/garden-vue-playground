@@ -1,32 +1,39 @@
-
 .main {
-    margin: 1em;
+  margin: 1em;
 }
 
 .main > .c-tab > .c-tab__list {
-    border-right: 1px solid rgb(200, 200, 200);
-    width: 300px;
+  border-right: 1px solid rgb(200, 200, 200);
+  width: 300px;
 }
 
 .section-title {
-    margin-bottom: 1em;
-    margin-top: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .example {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 1em;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 1em;
+  align-items: center;
 }
 
 .example > * {
-    margin-right: 1em;
+  margin-right: 1em;
 }
 
 .source {
+}
 
+.c-code {
+  border-radius: 2px;
+  background-color: #e9ebed;
+  padding: 1.5px 2px;
+  line-height: 1.53846;
+  font-size: 0.92857em;
+  color: #49545c;
 }
 
 .grid-2 {

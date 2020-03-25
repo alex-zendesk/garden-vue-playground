@@ -1,6 +1,6 @@
 const template = `
   <div class="main">
-    <g-tabs block :activeTab="0">
+    <g-tabs block activeTab="Menu">
       <template v-for="(sections, title) in components" :slot="title">
         <template v-for="section in sections">
           <p class="u-fs-lg section-title">{{ section.label }}</p>
@@ -28,7 +28,7 @@ const Main = {
   template,
   data: () => ({
     components: {
-      'Buttons': [
+      Buttons: [
         {
           label: 'Types',
           visible: false,
@@ -38,7 +38,7 @@ const Main = {
             `<g-button variant="pill">Pill</g-button>`,
             `<g-button variant="basic">Basic</g-button>`,
             `<g-button variant="muted">Muted</g-button>`,
-            `<g-button variant="anchor">Anchor</g-button>`,
+            `<g-button variant="anchor">Anchor</g-button>`
           ]
         },
         {
@@ -50,7 +50,7 @@ const Main = {
             `<g-button danger variant="pill">Pill</g-button>`,
             `<g-button danger variant="basic">Basic</g-button>`,
             `<g-button danger variant="muted">Muted</g-button>`,
-            `<g-button danger variant="anchor">Anchor</g-button>`,
+            `<g-button danger variant="anchor">Anchor</g-button>`
           ]
         },
         {
@@ -59,7 +59,7 @@ const Main = {
           content: [
             `<g-button size="sm">Small</g-button>`,
             `<g-button size="lg">Large</g-button>`,
-            `<g-button full>Full</g-button>`,
+            `<g-button full>Full</g-button>`
           ]
         },
         {
@@ -69,7 +69,7 @@ const Main = {
             `<g-button disabled>Disabled</g-button>`,
             `<g-button state="focused">Focused</g-button>`,
             `<g-button state="hovered">Hovered</g-button>`,
-            `<g-button state="active">Active</g-button>`,
+            `<g-button state="active">Active</g-button>`
           ]
         },
         {
@@ -81,11 +81,11 @@ const Main = {
             `</g-button>`,
             `<g-button icon>`,
             `    <g-icon icon="zd-svg-icon-26-book" />`,
-            `</g-button>`,
+            `</g-button>`
           ]
         }
       ],
-      'Callouts': [
+      Callouts: [
         {
           visible: false,
           grid: 2,
@@ -132,7 +132,7 @@ const Main = {
           content: [
             `<g-checkbox label="Default" hint="Hint" />`,
             `<g-checkbox label="Toggle" variant="toggle" hint="Hint" />`,
-            `<g-checkbox label="Radio" variant="radio" hint="Hint" />`,
+            `<g-checkbox label="Radio" variant="radio" hint="Hint" />`
           ]
         },
         {
@@ -142,26 +142,26 @@ const Main = {
             `<g-checkbox disabled label="Disabled" hint="Hint" />`,
             `<g-checkbox label="Checked" checked hint="Hint" />`,
             `<g-checkbox label="Toggle" checked variant="toggle" hint="Hint" />`,
-            `<g-checkbox label="Radio" checked variant="radio" hint="Hint" />`,
+            `<g-checkbox label="Radio" checked variant="radio" hint="Hint" />`
           ]
-        },
+        }
       ],
-      'Dropdowns': [
+      Dropdowns: [
         {
           visible: false,
           content: [
-            `<g-dropdown label="Default" :options="[{value: 'value1', label: 'Value 1'}, {value: 'value2', label: 'Value 2'}, {value: 'value3', label: 'Value 3'}]" />`,
+            `<g-dropdown label="Default" :options="[{value: 'value1', label: 'Value 1'}, {value: 'value2', label: 'Value 2'}, {value: 'value3', label: 'Value 3'}]" />`
           ]
-        },
+        }
       ],
-      'Tags': [
+      Tags: [
         {
           label: 'Shapes',
           visible: false,
           content: [
             `<g-tag title="Default" />`,
             `<g-tag title="Pill" shape="pill" />`,
-            `<g-tag title="Round" shape="round" />`,
+            `<g-tag title="Round" shape="round" />`
           ]
         },
         {
@@ -169,7 +169,7 @@ const Main = {
           visible: false,
           content: [
             `<g-tag title="Small" size="sm" />`,
-            `<g-tag title="Large" size="lg" />`,
+            `<g-tag title="Large" size="lg" />`
           ]
         },
         {
@@ -180,38 +180,68 @@ const Main = {
             `<g-tag title="Yellow" color="yellow" />`,
             `<g-tag title="Green" color="green" />`,
             `<g-tag title="Blue" color="blue" />`,
-            `<g-tag title="Grey" color="grey" />`,
+            `<g-tag title="Grey" color="grey" />`
           ]
         },
         {
           label: 'Closable',
           visible: false,
-          content: [
-            `<g-tag canClose title="Close me!" color="green" />`,
-          ]
-        },
+          content: [`<g-tag canClose title="Close me!" color="green" />`]
+        }
       ],
       'Text & Textarea': [
         {
           label: 'Text Input',
           visible: false,
-          content: [
-            `<g-text-input label="Label" hint="Hint" />`,
-          ]
+          content: [`<g-text-input label="Label" hint="Hint" />`]
         },
         {
           label: 'Text Area',
           visible: false,
+          content: [`<g-text-area label="Label" hint="Hint" />`]
+        }
+      ],
+      Breadcrumbs: [
+        {
+          label: 'Breadcrumbs',
+          visible: false,
           content: [
-            `<g-text-area label="Label" hint="Hint" />`,
+            `<g-breadcrumb>`,
+            ` <g-breadcrumb-item>One</g-breadcrumb-item>`,
+            ` <g-breadcrumb-item>Two</g-breadcrumb-item>`,
+            ` <g-breadcrumb-item current>Three</g-breadcrumb-item>`,
+            `</g-breadcrumb>`
+          ]
+        }
+      ],
+      Menu: [
+        {
+          label: 'Basic Structure',
+          visible: true,
+          content: [
+            `
+            <g-menu open>
+              <g-menu-item header>Using 
+                <code class="c-code">ul > li</code>
+              </g-menu-item>
+              <g-menu-item>Option One</g-menu-item>
+              <g-menu-item>Option Two</g-menu-item>
+              <g-menu-item>Option Three</g-menu-item>
+            </g-menu>
+            `
           ]
         },
+        {
+          label: 'Show/Hide Animations',
+          visible: true,
+          content: []
+        }
       ]
     }
   }),
   methods: {
     format(code) {
-      return code.join("\n");
+      return code.join('\n');
     }
   }
 };
