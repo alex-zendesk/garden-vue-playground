@@ -24,6 +24,12 @@ const lipsumLarge  = 'Chicharrones brooklyn cardigan marfa pour-over craft beer 
 const lipsumMedium = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque sapien quis purus tincidunt ultrices. Morbi rutrum, tellus et viverra tincidunt, diam ipsum laoreet risus, non tempus ligula arcu eget mi.';
 const lipsumSmall  = 'Paleo gochujang heirloom salvia subway tile letterpress retro.';
 
+const dropdownOptions = `[
+  {value: 'value1', label: 'Value 1'},
+  {value: 'value2', label: 'Value 2'},
+  {value: 'value3', label: 'Value 3'},
+]`;
+
 const Main = {
   template,
   data: () => ({
@@ -127,22 +133,36 @@ const Main = {
       ],
       'Checkboxes, Toggles, & Radios': [
         {
-          label: 'Types',
+          label: 'Default',
           visible: false,
+          grid: 3,
           content: [
-            `<g-checkbox label="Default" hint="Hint" />`,
-            `<g-checkbox label="Toggle" variant="toggle" hint="Hint" />`,
-            `<g-checkbox label="Radio" variant="radio" hint="Hint" />`
+            `<g-checkbox label="Label" hint="Hint" message="Message" name="checkbox-default" />`,
+            `<g-checkbox label="Toggle" hint="Hint" message="Message" variant="toggle" name="toggle-default" />`,
+            `<g-checkbox label="Radio" hint="Hint" message="Message" variant="radio" name="radio-default" />`
           ]
         },
         {
-          label: 'States',
+          label: 'Checked',
           visible: false,
+          grid: 3,
           content: [
-            `<g-checkbox disabled label="Disabled" hint="Hint" />`,
-            `<g-checkbox label="Checked" checked hint="Hint" />`,
-            `<g-checkbox label="Toggle" checked variant="toggle" hint="Hint" />`,
-            `<g-checkbox label="Radio" checked variant="radio" hint="Hint" />`
+            `<g-checkbox checked label="Label" hint="Hint" message="Message" name="checkbox-checked" />`,
+            `<g-checkbox checked label="Toggle" hint="Hint" message="Message" variant="toggle" name="toggle-checked" />`,
+            `<g-checkbox checked label="Radio" hint="Hint" message="Message" variant="radio" name="radio-checked" />`
+          ]
+        },
+        {
+          label: 'Disabled',
+          visible: false,
+          grid: 3,
+          content: [
+            `<g-checkbox checked label="Label" hint="Hint" message="Message" name="checkbox-checked" />`,
+            `<g-checkbox checked label="Toggle" hint="Hint" message="Message" variant="toggle" name="toggle-checked" />`,
+            `<g-checkbox checked label="Radio" hint="Hint" message="Message" variant="radio" name="radio-checked" />`,
+            `<g-checkbox disabled checked label="Label" hint="Hint" message="Message" name="checkbox-checked" />`,
+            `<g-checkbox disabled checked label="Toggle" hint="Hint" message="Message" variant="toggle" name="toggle-checked" />`,
+            `<g-checkbox disabled checked label="Radio" hint="Hint" message="Message" variant="radio" name="radio-checked" />`,
           ]
         }
       ],
@@ -150,7 +170,7 @@ const Main = {
         {
           visible: false,
           content: [
-            `<g-dropdown label="Default" :options="[{value: 'value1', label: 'Value 1'}, {value: 'value2', label: 'Value 2'}, {value: 'value3', label: 'Value 3'}]" />`
+            `<g-dropdown label="Default" :options="${dropdownOptions}" />`
           ]
         }
       ],
