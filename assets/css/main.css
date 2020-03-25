@@ -18,10 +18,7 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 1em;
-    align-items: flex-start;
-    padding: 1em;
-    border: 1px dotted rgb(200, 200, 200);
-    border-radius: 5px;
+    align-items: center;
 }
 
 .example > * {
@@ -30,4 +27,34 @@
 
 .source {
 
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 1em;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 1em;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 1em;
+}
+
+.grid-5 {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-gap: 1em;
+}
+
+.grid-6 {
+    display: grid;
+    grid-template-columns: 16% 16% 16% 16% 16% 16%;
+    grid-gap: 1em;
 }

@@ -4,7 +4,7 @@ const template = `
       <template v-for="(sections, title) in components" :slot="title">
         <template v-for="section in sections">
           <p class="u-fs-lg section-title">{{ section.label }}</p>
-          <quick-preview :code="section.content.join('')" />
+          <quick-preview :grid="section.grid || 1" :code="section.content.join('')" />
           <div class="source">
             <g-button variant="basic" @click="section.visible = !section.visible">
               <g-icon icon="zd-svg-icon-16-eye-stroke" />
@@ -19,6 +19,10 @@ const template = `
     </g-tabs>
   </div>
 `;
+
+const lipsumLarge  = 'Chicharrones brooklyn cardigan marfa pour-over craft beer dreamcatcher cold-pressed brunch meggings. Live-edge disrupt narwhal irony neutra single-origin coffee, biodiesel before they sold out roof party venmo farm-to-table direct trade poke tousled aesthetic. Prism dreamcatcher glossier cloud bread blue bottle farm-to-table celiac chicharrones single-origin coffee salvia knausgaard raclette.';
+const lipsumMedium = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque sapien quis purus tincidunt ultrices. Morbi rutrum, tellus et viverra tincidunt, diam ipsum laoreet risus, non tempus ligula arcu eget mi.';
+const lipsumSmall  = 'Paleo gochujang heirloom salvia subway tile letterpress retro.';
 
 const Main = {
   template,
@@ -83,28 +87,41 @@ const Main = {
       ],
       'Callouts': [
         {
-          label: 'Standard',
           visible: false,
+          grid: 2,
           content: [
-            `<g-callout title="Callout: Standard" message="Callout body" />`,
+            `<g-callout title="Callout: Standard (Multi-line)" message="${lipsumLarge}" />`,
+            `<g-callout title="Callout: Recessed (Multi-line)" message="${lipsumLarge}" type="recessed" />`,
+            `<g-callout title="Callout: Standard (One-line)" message="${lipsumSmall}" />`,
+            `<g-callout title="Callout: Recessed (One-line)" message="${lipsumSmall}" type="recessed" />`,
+            `<g-callout title="Callout: Standard Dialog" message="${lipsumSmall}" dialog />`,
+            `<g-callout title="Callout: Recessed Dialog" message="${lipsumSmall}" dialog type="recessed" />`,
           ]
         },
         {
           label: 'Alerts & Notifications',
           visible: false,
+          grid: 2,
           content: [
-            `<g-callout type="success" title="Callout: Success" message="Callout body" />`,
-            `<g-callout type="warning" title="Callout: Warning" message="Callout body" />`,
-            `<g-callout type="error" title="Callout: Error" message="Callout body" />`,
-            `<g-callout type="info" title="Callout: Info" message="Callout body" />`,
-            `<g-callout type="recessed" title="Callout: Recessed" message="Callout body" />`,
+            `<g-callout title="Success Callout: Well" message="${lipsumMedium}" type="success" />`,
+            `<g-callout title="Success Callout: Dialog" message="${lipsumMedium}" type="success" dialog />`,
+            `<g-callout title="Warning Callout: Well" message="${lipsumMedium}" type="warning" />`,
+            `<g-callout title="Warning Callout: Dialog" message="${lipsumMedium}" type="warning" dialog />`,
+            `<g-callout title="Error Callout: Well" message="${lipsumMedium}" type="error" />`,
+            `<g-callout title="Error Callout: Dialog" message="${lipsumMedium}" type="error" dialog />`,
+            `<g-callout title="Info Callout: Well" message="${lipsumMedium}" type="info" />`,
+            `<g-callout title="Info Callout: Dialog" message="${lipsumMedium}" type="info" dialog />`,
           ]
         },
         {
-          label: 'Closable',
+          label: 'Close Button',
           visible: false,
+          grid: 2,
           content: [
-            `<g-callout canClose type="success" title="Callout: Success" message="Callout body" />`,
+            `<g-callout canClose title="Success Callout: Well" message="${lipsumMedium}" type="success" />`,
+            `<g-callout canClose title="Warning Callout: Well" message="${lipsumMedium}" type="warning" />`,
+            `<g-callout canClose title="Error Callout: Well" message="${lipsumMedium}" type="error" />`,
+            `<g-callout canClose title="Info Callout: Well" message="${lipsumMedium}" type="info" />`,
           ]
         }
       ],
