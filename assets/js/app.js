@@ -12,13 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
         code: {
           type: String,
           required: true
+        },
+        grid: {
+          type: Number,
+          required: false
         }
       },
       data: () => ({
         renderFn: null,
       }),
       render(h) {
-        return h('div', {class: 'example'}, [this.renderFn ? this.renderFn() : '']);
+        return h('div', {class: `example ${this.grid ? 'grid-'+this.grid : ''}`}, [this.renderFn ? this.renderFn() : '']);
       },
       mounted() {
         const { render } = Vue.compile(`<template>${this.code}</template>`);
